@@ -1,16 +1,22 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { motion } from "framer-motion";
 import HomeContainer from "./HomeContainer";
 
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import RowContainer from "./RowContainer";
 import { useStateValue } from "../context/StateProvider";
-import MenuContainer from "./MenuContainer";
-import CartContainer from "./CartContainer";
+
+
 
 const MainContainer = () => {
+
+  const [{ foodItems, cartShow }, dispatch] = useStateValue();
+  const [scrollValue, setScrollValue] = useState(0);
+
+  useEffect(() => {}, [scrollValue, cartShow]);
+
   return (
-    <div className="flex w-full mt-24 h-auto items-center justify-center flex-col">
+    <div className="flex w-full h-auto items-center justify-center flex-col">
       <HomeContainer />
 
       <section className="w-full my-6">
@@ -29,7 +35,7 @@ const MainContainer = () => {
             </motion.div>
             <motion.div
               whileTap={{ scale: 0.75 }}
-              className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg flex items-center justify-center"
+              className="w-8 h-8 rounded-lg bg-bgGold hover:bg-bgMetalGold cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg flex items-center justify-center"
               onClick={() => setScrollValue(200)}
             >
               <MdChevronRight className="text-lg text-white" />

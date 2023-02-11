@@ -46,9 +46,9 @@ const HomeContainer = () => {
           className="lg:h-600 h-370 w-full lg:w-400 ml-auto mr-8 rounded"
           alt="hero-bg"
         />
-        <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-4 flex-wrap ">
+        <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-20 py-4 gap-4 flex-wrap ">
           { HeroData && HeroData.map(item =>(
-            <div key={item.id} className="lg:w-190  p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg ">
+            <div key={item.id} className="lg:w-190 p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg ">
             <img src={item.imgsrc} className="w-20 lg:w-40 -mt-10 lg:-mt-20" alt="icecrem" />
             <p className="text-base lg:text-xl font-semibold text-textColor mt-2 lg:mt-4">{item.descp}</p>
             <p className="text-[12px] lg:text-sm text-primary font-semibold my-1 lg:my-3">
